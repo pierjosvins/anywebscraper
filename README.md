@@ -19,7 +19,7 @@ pip install anywebscraper
 ```
 
 ```python
-from anywebscraper.anywebscraper import AnyWebScraper
+from anywebscraper import AnyWebScraper
 
 # Initialization
 webscraper = AnyWebScraper()
@@ -51,7 +51,7 @@ An error is displayed stating that it is forbidden to request this link, as show
 
 Now let's use **anywebscraper** to see the difference.
 ```python
-from anywebscraper.anywebscraper import AnyWebScraper
+from anywebscraper import AnyWebScraper
 
 url = "https://www.investing.com/crypto/bitcoin"
 web_scraper = AnyWebScraper()
