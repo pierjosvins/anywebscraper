@@ -37,7 +37,7 @@ Let's try to collect historical bitcoin data from https://www.investing.com usin
 ![Bitcoin Historical Data](images/bitcoin-data.png)
 
 To do that, we can use Python code below:
-```
+```python
 from urllib.request import urlopen
 
 url = "https://www.investing.com/crypto/bitcoin"
@@ -50,7 +50,7 @@ An error is displayed stating that it is forbidden to request this link, as show
 ![Error from Classical Method](images/error-bitcoin.png)
 
 Now let's use **anywebscraper** to see the difference.
-```
+```python
 from anywebscraper.anywebscraper import AnyWebScraper
 
 url = "https://www.investing.com/crypto/bitcoin"
