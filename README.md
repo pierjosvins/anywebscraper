@@ -39,6 +39,7 @@ Let's try to collect historical bitcoin data from https://www.investing.com usin
 To do that, we can use Python code below:
 ```
 from urllib.request import urlopen
+
 url = "https://www.investing.com/crypto/bitcoin"
 page = urlopen(url)
 html_bytes = page.read()
@@ -50,7 +51,8 @@ An error is displayed stating that it is forbidden to request this link, as show
 
 Now let's use **anywebscraper** to see the difference.
 ```
-from urllib.request import urlopen
+from anywebscraper import AnyWebScraper
+
 url = "https://www.investing.com/crypto/bitcoin"
 web_scraper = AnyWebScraper()
 html = web_scraper.webScrape(url=url)
