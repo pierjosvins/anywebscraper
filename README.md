@@ -25,7 +25,6 @@ from anywebscraper import AnyWebScraper
 
 # Initialization
 webscraper = AnyWebScraper()
-webscraper.start()
 
 # Define the url of the website you want to web scrape
 url="your-website URL" # i.e url = "https://google.com"
@@ -57,7 +56,6 @@ from anywebscraper import AnyWebScraper
 
 url = "https://www.investing.com/crypto/bitcoin"
 web_scraper = AnyWebScraper()
-webscraper.start()
 
 html = web_scraper.webScrape(url=url)
 print(html.prettify())
@@ -65,11 +63,6 @@ print(html.prettify())
 ![AnyWebScraper Method](images/anywebscraper.png)
 
 We can see that there is no forbidden error and that our library returns data from this link. Now all we need to do is collect the relevant data, as we do with BeautifulSoup, using the appropriate methods.
-
-If you've finished the web scraping process, it's advisable to stop the service to release memory resources, but this is not compulsory.
-```python
-webscraper.stop()
-```
 ## Contribution
 
 Pull requests are welcome. For significant changes, please open an issue first to discuss what you want to change.
