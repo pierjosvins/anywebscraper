@@ -17,13 +17,10 @@ class AnyWebScraper():
         
         while "curl-impersonate.zip" in os.listdir():
             os.remove("curl-impersonate.zip")
-        
-        print("Starting ...")
     
     def stop(self):
         while "curl-impersonate" in os.listdir():
             shutil.rmtree("curl-impersonate")
-        print("Stop !!!")
         
     def get_curl_impersonate(self, operating_system):
         if operating_system == "linux":
@@ -71,6 +68,7 @@ class AnyWebScraper():
         
         while "any-web-scraper.txt" in os.listdir():
             os.remove("any-web-scraper.txt")
-
+	
+        self.stop()
         soup = BeautifulSoup(response, 'html.parser')
         return soup
