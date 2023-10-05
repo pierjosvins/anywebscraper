@@ -33,7 +33,7 @@ class AnyWebScraper():
             url = "https://drive.google.com/uc?id=1_HXnsfifSibtweMEAXGtOgRo1cbsEHzS"
 
         output = "curl-impersonate.zip"
-        gdown.download(url, output, quiet=False)
+        gdown.download(url, output, quiet=True)
         while output not in os.listdir():
             time.sleep(1)
 
