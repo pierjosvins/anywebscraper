@@ -4,6 +4,8 @@ Have you ever tried to access data from a number of sites only to be blocked? Th
 
 **anywebscraper** is your ultimate web data extraction companion. We understand the challenges of web scraping, including dealing with anti-bot measures and the need for reliable proxies. Our library is designed to make web scraping easy and effective, even in the most challenging environments. Whether you're a data scientist, business analyst, or developer looking to harness the power of web data, **anywebscraper** has you covered.
 
+We benchmarked our solution against websites such as https://www.g2.com and https://www.investing.com. The results are quite satisfactory, we have successfully web-scraped all the data without any problems.
+
 ## Key Features
 * **No Proxy Integration**: Say goodbye to IP bans and blocked access. **anywebscraper** does not integrate with proxies but ensures uninterrupted data retrieval.
 
@@ -23,6 +25,7 @@ from anywebscraper import AnyWebScraper
 
 # Initialization
 webscraper = AnyWebScraper()
+webscraper.start()
 
 # Define the url of the website you want to web scrape
 url="your-website URL" # i.e url = "https://google.com"
@@ -39,7 +42,6 @@ Let's try to collect historical bitcoin data from https://www.investing.com usin
 To do that, we can use Python code below:
 ```python
 from urllib.request import urlopen
-
 url = "https://www.investing.com/crypto/bitcoin"
 page = urlopen(url)
 html_bytes = page.read()
@@ -55,6 +57,8 @@ from anywebscraper import AnyWebScraper
 
 url = "https://www.investing.com/crypto/bitcoin"
 web_scraper = AnyWebScraper()
+webscraper.start()
+
 html = web_scraper.webScrape(url=url)
 print(html.prettify())
 ```
@@ -62,6 +66,10 @@ print(html.prettify())
 
 We can see that there is no forbidden error and that our library returns data from this link. Now all we need to do is collect the relevant data, as we do with BeautifulSoup, using the appropriate methods.
 
+If you've finished the web scraping process, it's advisable to stop the service to release memory resources, but this is not compulsory.
+```python
+webscraper.stop()
+```
 ## Contribution
 
 Pull requests are welcome. For significant changes, please open an issue first to discuss what you want to change.
