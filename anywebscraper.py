@@ -60,7 +60,7 @@ class AnyWebScraper():
         result = os.system("curl-impersonate/" + file_exe +" "+ url + " > any-web-scraper.txt")
         
         while "any-web-scraper.txt" not in os.listdir():
-            result = os.system("curl-impersonate/" + file_exe +" "+ url + " > any-web-scraper.txt")
+            result = os.system("curl-impersonate/" + file_exe +" -k "+ url + " > any-web-scraper.txt")
         
         file = open('any-web-scraper.txt', 'r', encoding='utf-8', errors='ignore')
         response = file.read()
